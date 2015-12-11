@@ -1,0 +1,8 @@
+* Las lineas que comienzan con * son comentarios
+*
+* Tambien se pueden dejar lineas en blanco
+* El formato correcto es el de abajo
+
+NUMERO_DE_SERIE=DF-D5-EF-3C-16-3B
+
+* Dejar al menos una linea despues del NUMERO_DE_SERIE
