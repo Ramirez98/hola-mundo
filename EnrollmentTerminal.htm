@@ -1,0 +1,151 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<title>Enrolamiento</title>
+<!-- Declaración de variables-->
+<script>
+	var classToWakeUp = "ar.com.nec.sol.component.capture.CaptureComponentForm";
+	var appToLaunch = "Huellas";
+	var jobType = "TC";
+	var externalPersonId = "100000000038";
+	var transactionid = "P2PP1111442246";
+	var Sex = "M";
+	var fechaNacimiento = "13/10/1976";
+	var user = "Cesar";
+	var Solapa="FACE-FINGER-DOCUMENT"
+</script>
+<script>
+	// si existe una variable JS llamada variable
+	// devuelve una cadena concatenando "variable",
+	// el signo "=" y el valor de la variable
+	function addKeyValue(variable)
+	{
+		try
+		{
+			if (eval(variable))
+			{
+				return variable + "=" + eval(variable);
+			} 
+			else 
+			{
+				return "";
+			}
+		} 
+		catch (ex)
+		{
+			return "";
+		}
+		return "";
+	}
+	function doit(){
+		
+		var hiddenFrame = document.frames['RSIFrame'];
+		
+		var launcher = "http://localhost:10678/?";
+		launcher += addKeyValue("classToWakeUp");
+		//alert(launcher);
+		launcher += "|" + addKeyValue("appToLaunch");
+		launcher += "|jobType="+ document.forms['Form1'].elements['JobType'].value;
+		//alert(launcher);
+		launcher += "|externalPersonId="+ document.forms['Form1'].elements['IdPersona'].value;
+		///alert(launcher);
+		launcher += "|transactionid="+ document.forms['Form1'].elements['transactionid'].value;
+		launcher += "|Solapa="+ document.forms['Form1'].elements['Solapa'].value;
+		//alert(launcher);
+		launcher += "|" + addKeyValue("Sex");
+		//alert(launcher);
+		launcher += "|" + addKeyValue("fechaNacimiento");
+		//alert(launcher);
+		launcher += "|" + addKeyValue("user");
+		//alert(launcher);
+		//launcher += "|";
+		
+		alert(launcher);
+		hiddenFrame.location.href=launcher;
+		return launcher;
+	}
+	function OpenMyWin()
+	{
+		window.open(doit(), '');
+		//window.close();
+	} 
+</script>
+
+	</HEAD>
+		<body>
+		
+		<form name="Form1" method="post" action="" id="Form1" onSubmit="return false;">
+			<table cellpadding="0" cellspacing="0" align="center">
+						
+				<tr>
+					<td>Nro. Transacción
+					</td>
+					<td><input type="text" name="transactionid" value=""/>
+					</td>
+				</tr>
+				<tr>
+					<td>Id Persona
+					</td>
+					<td><input type="text" name="IdPersona" value=""/>
+					</td>
+				</tr>
+				<tr>
+				<tr>
+					<td>Solapa
+					</td>
+					<td>
+					<select name="JobType">
+						<option value="TC" selected>TC</option>
+						<option value="TU" selected>TU</option>						
+						<option value="TD"selected>TD</option>
+						<option value="VER"selected>VER</option>
+						<option value="TI"selected>TI</option>
+						</select>
+					</td>
+				</tr>					
+				</tr>
+				<tr>
+				<tr>
+					<td>JobType
+					</td>
+					<td>
+					<select name="Solapa">
+						<option value="FACE-FINGER-DOCUMENT" selected>FACE-FINGER-DOCUMENT</option>
+						<option value="VERSINGLE" selected>VERSINGLE</option>
+						
+					</select>
+					</td>
+				</tr>					
+				</tr>
+				
+				<tr>
+				
+					<td>
+					</td>
+					<td><input type="button" onclick="doit()" value="Enrolar"/>
+					</td>
+					
+				</tr>
+				<tr>
+					<td valign="top">
+
+
+						<iframe 
+							id="RSIFrame"
+							name="RSIFrame"
+							style="width:0px; height:0px; border: 0px"
+							src="blank.html"
+						>
+						</iframe>
+
+
+					</td>
+				</tr>
+			</table>
+		</form>
+	
+	</body>
+	
+	
+</HTML>
+

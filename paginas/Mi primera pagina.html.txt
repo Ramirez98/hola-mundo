@@ -1,0 +1,12 @@
+<html>
+	<head>
+	Mi primera pagina	
+		<title>
+		Mi primera pagina
+		</title>
+	</head>
+		<body>
+		<Div align = "center" 
+		<H1>Hola mundo<h1>
+		
+		 
